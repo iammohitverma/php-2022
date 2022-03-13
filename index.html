@@ -1,0 +1,1008 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/style.css" rel="stylesheet">
+    <link href="./assets/prism/prism.css" rel="stylesheet">
+    <link href="./assets/line-number/line-number.css" rel="stylesheet">
+    <script src="./assets/prism/prism.js"></script>
+    <script src="./assets/line-number/line-number.js"></script>
+    <link rel="icon" href="https://reactjs.org/favicon.ico">
+    <title>PHP Code Snippets </title>
+</head>
+
+<body>
+
+    <div class="container-fluid wordpressFunctionAP">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 right">
+                    <ul>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Variables in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">&lt;?php
+    $txt = "Hello world!";
+    $x = 5;
+    $y = 10.5;
+    echo $txt;
+
+    $name = "Mohit";
+    echo "My name is {$name}";
+    echo "My name is " . {$name};
+?>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Concatenation in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">&lt;?php
+    $name = "Mohit";
+    $age = 24;
+    $rollNo = 1041;
+    // echo "My Name is {$name}. My Age is {$age}. My Roll No is {$rollNo}.";
+    echo 'My Name is ' .$name. '. My Age is ' .$age. '. My Roll No is ' .$rollNo . '.';
+
+    //Concatenation Assignment
+    $name = "Mohit";
+    $name .= " Verma";
+    echo $name; // Outputs Mohit Verma!
+?>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Arrays in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">&lt;?php
+    $cars = array("Volvo", "BMW", "Toyota"); 
+    echo "I like " . $cars[0] . ", " . $cars[1] . " and " . $cars[2] . ".";
+?>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Operators in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">&lt;?php
+    $num1 = 10;
+    $num2 = 5;
+    $division = $num1 / $num2;
+    $modulo = $num1 % $num2;
+    echo "division " . $division . "&lt;/br>";
+    echo "modulo " . $modulo;
+
+    //Pow in PHP
+    $base = 5;
+    $power = 2;
+    echo(pow($base,$power));
+
+    //Area of circle
+    $pi = 3.141;
+    $radius = 5;
+    $areaOfCircle = $pi*$radius*$radius;
+    echo $areaOfCircle;
+
+    //Area of triangle
+    $height = 5;
+    $base = 3;
+    $areaOfCircle = (1/2)*$height*$base;
+    echo $areaOfCircle;
+
+    //Area of square
+    $area = 5;
+    $areaOfSquare = $area*$area;
+    echo $areaOfSquare;
+
+    //Area of rectangle 
+    $length = 5;
+    $width = 3;
+    $areaOfRectangle  = $length*$width;
+    echo $areaOfRectangle ;
+?>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Logical Operators in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">&lt;?php
+    //And Operator
+    $num1 = 10;
+    $num2 = 10;
+    $num3 = 10;
+  
+    if($num1 == $num2 && $num1 == $num3){
+      echo "True";
+    }else{
+        echo "False";
+    }
+    //Output will be "True" because both conditions are True
+
+
+    //Or Operator
+    $num1 = 10;
+    $num2 = 10;
+    $num3 = 30;
+  
+    if($num1 == $num2 || $num1 == $num3){
+      echo "True";
+    }else{
+        echo "False";
+    }
+    //Output will be "True" because one condition is True
+  
+    //Using Ternary Operator
+    echo ($num1 == $num2 || $num1 == $num3) ? "True" : "False";
+?>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Dynamic HTML content in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">&lt;section>
+    &lt;form method="POST">
+        &lt;input type="text" name="color">
+        &lt;input type="submit" name="submit">
+    &lt;/form>
+&lt;/section>
+
+&lt;?php
+    if (isset($_POST['submit'])){
+        $favColor = $_POST['color'];
+
+        switch ($favColor) {
+        case "red":
+            echo "Your favorite color is red!";
+            break;
+        case "blue":
+            echo "Your favorite color is blue!";
+            break;
+        case "green":
+            echo "Your favorite color is green!";
+            break;
+        default:
+            echo "DEFAULT CASE:-Your favorite color is neither red, blue, nor green!";
+        }
+    }
+?>
+
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Basic Calculator in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">&lt;section class="p-5">
+    &lt;div class="container">
+        &lt;div class="row justify-content-center">
+            &lt;div class="col-md-6">
+                &lt;form method="POST">
+                    &lt;div class="mb-3">
+                        &lt;input type="text" name="inputFirst" class="form-control" placeholder="First Value">
+                    &lt;/div>
+                    &lt;div class="mb-3">
+                        &lt;input type="text" name="inputSecond" class="form-control" placeholder="Second Value">
+                    &lt;/div>
+                    &lt;div class="mb-3">
+                        &lt;select name="operation" class="form-select">
+                            &lt;option value="add">Add&lt;/option>
+                            &lt;option value="subtraction">Sub&lt;/option>
+                            &lt;option value="multiple">Multiplication&lt;/option>
+                        &lt;/select>
+                    &lt;/div>
+                    &lt;input type="submit" name="submit" class="btn btn-primary">
+                &lt;/form>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/section>
+
+&lt;?php
+    if (isset($_POST['submit'])){
+        $inputFirst = $_POST['inputFirst'];
+        $inputSecond = $_POST['inputSecond'];
+        $operationValue = $_POST['operation'];
+
+        switch ($operationValue) {
+        case "add":
+            $sum = $inputFirst + $inputSecond;
+            echo "Addition of two Number is " . $sum;
+            break;
+        case "subtraction":
+            $subtraction = $inputFirst - $inputSecond;
+            echo "Subtraction of two Number is " . $subtraction;
+            break;
+        case "multiple":
+            $multiplication = $inputFirst * $inputSecond;
+            echo "multiplication of two Number is " . $multiplication;
+            break;
+        default:
+            echo "DEFAULT CASE";
+        }
+    }
+?>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    What is DataBase
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">A database is an organized collection of structured information,
+or data, typically stored electronically in a computer system. 
+A database is usually controlled by a database management 
+system (DBMS).
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    What is Database management system
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">Database management system is software 
+that is used to manage the database.
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    SQL full form
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">Structured Query Language
+Sql is the language that we use to talk with our DB.
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    SQL vs No SQL
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">SQL
+It is called Relational Databases (RDBMS).
+It is Table Based.
+It is Vertcally Scalable.
+DBMS is Oracle, postgres & MySQL etc.
+
+
+NO SQL
+It is called NonRelational Databases.
+It is Document Based, Graph Based, Key value pairs like jSon format.
+It is Horizontally Scalable.
+DBMS is MongoDB, Cassandra & Redis etc.
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Data Types in SQL
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">Int
+for numbers int
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 right">
+                    <ul>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Variables in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">&lt;?php
+    $txt = "Hello world!";
+    $x = 5;
+    $y = 10.5;
+    echo $txt;
+
+    $name = "Mohit";
+    echo "My name is {$name}";
+    echo "My name is " . {$name};
+?>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Random number in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">&lt;?php
+    echo(rand() . "<br>");
+    echo(rand(10,100));
+?>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Fizz Buzz Challenge in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">&lt;?php
+    for ($i=1; $i <= 100; $i++) { 
+        if(($i % 5 == 0) && ($i % 3 ==0)){
+            echo "Fizz Buzz <br>";
+        } else if($i % 5 == 0){
+            echo "Buzz <br>";
+        } else if ($i % 3 == 0){
+            echo "Fizz <br>";
+        } else {
+            echo $i."<br>";
+        }
+    }
+?>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Head Tail Challenge in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">&lt;?php
+    $headCount = 0;
+    $tailCount = 0;
+    for ($i=0; $i < 100; $i++) { 
+        $randNum = rand(1, 2);
+        if($randNum == 1){
+            $tailCount++;
+        } else{
+            $headCount++;
+        }
+    }
+    echo $headCount . " Heads </br>";
+    echo $tailCount . " Tails </br>";
+    if($headCount>$tailCount){
+        echo "Head is win </br>";
+    }else if($tailCount>$headCount){
+        echo "Tail is win </br>";
+    }else {
+        echo "Draw </br>";
+    }
+    
+?>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    find length of string in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">&lt;?php
+    echo strlen("Mohit"); //Output will be 5
+?>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    How to count the number of words in a string in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">&lt;?php
+    echo str_word_count("Mohit Verma"); //Output will be 2
+?>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    String Replace in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+<code class="language-php">&lt;?php
+    //for Case sensitive
+    echo str_replace("Hello......", "Hello Mr", "Hello...... Mohit");
+    // echo str_replace("Search", "Replace with Text", "Subject");
+    
+    //for Case Insensitive
+    echo str_ireplace("HeLLo......", "Hello Mr", "Hello...... Mohit");
+?>
+</code>
+                                </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Functions in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+    <code class="language-javascript">// Create function
+    function echoWord(){
+        echo "Hello &lt;/br>";
+        $sum = 5 + 5;
+        echo "Sum of two number is " . $sum;
+    }
+    // Call your function
+    echoWord();
+    </code>
+                                    </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    PHP Function Arguments
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+    <code class="language-javascript">function sumOfNumbers($firstVal, $secondVal){ //Function Parameters
+        $sum = $firstVal + $secondVal;
+        echo $sum; 
+    }
+    sumOfNumbers(3, 10);//Function Arguments
+    sumOfNumbers(5, 10);
+    
+    
+    //Assign default value to parameters
+    function sumOfNumbers($firstVal = 5, $secondVal = 3){
+        $sum = $firstVal + $secondVal;
+        echo $sum . "</br>"; 
+    }
+    sumOfNumbers(3, 10);
+    sumOfNumbers(); //Output will be 5 + 3 = 8 / default value
+    
+    
+    //Return in function
+    function sumOfNumbers($firstVal = 5, $secondVal = 3){
+        $sum = $firstVal + $secondVal;
+        return $sum;
+    }
+    // assign function into variable
+    $output = sumOfNumbers(10, 10);
+    echo "Sum of two Number is " . $output;
+    </code>
+                                    </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Arrays in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+    <code class="language-javascript">//echo for print string
+    //print_r for print arrays and functions
+    //echo "&lt;pre>"; for print arrays with formating
+    
+    $cars = array("Volvo", "BMW", "Toyota");
+    echo "&lt;pre>";
+    print_r( $cars ); 
+    echo "&lt;/pre>";   
+    
+    //get array's length using count function
+    echo count($cars);
+    </code>
+                                    </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Loop Array's values in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+    <code class="language-javascript">$cars = array("Volvo", "BMW", "Toyota");
+    $arrayLength = count($cars);
+    for ($i=0; $i < $arrayLength ; $i++) { 
+        echo $cars[$i] . "<br>";
+    }
+    </code>
+                                    </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    For Each Loop in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+    <code class="language-javascript">$colors = array("red", "green", "blue", "yellow"); 
+    echo "&lt;ol>";
+    foreach ($colors as $value) {
+        echo "&lt;li> {$value} &lt;/li>";
+    }
+    echo "&lt;/ol>";
+    </code>
+                                    </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Sort Array in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+    <code class="language-javascript">$colors = array("red", "green", "blue", "yellow"); 
+    sort($colors);
+    print_r($colors);
+    </code>
+                                    </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Add new items to the beginning of an array in PHP.
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+    <code class="language-javascript">$cars = array("Volvo", "BMW", "Toyota");
+    array_unshift($cars,"mercedes");
+    echo "&lt;pre>";
+    print_r( $cars ); 
+    echo "&lt;/pre>";   
+    </code>
+                                    </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Add new items to the end of an array in PHP.
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+    <code class="language-javascript">$cars = array("Volvo", "BMW", "Toyota");
+    array_push($cars,"mercedes");
+    echo "&lt;pre>";
+    print_r( $cars ); 
+    echo "&lt;/pre>";   
+    </code>
+                                    </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Remove First item from Array in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+    <code class="language-javascript">$colors = array("red", "green", "blue", "yellow"); 
+    array_shift($colors);
+    print_r($colors);
+    </code>
+                                    </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Remove last item from Array in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+    <code class="language-javascript">$colors = array("red", "green", "blue", "yellow"); 
+    array_pop($colors);
+    print_r($colors);
+    </code>
+                                    </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Convert Array to String
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+    <code class="language-javascript">$arr = array('Hello','World!','Beautiful','Day!');
+    echo implode(" ", $arr);
+    </code>
+                                    </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Convert String to Array
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+    <code class="language-javascript">$str = "Hello,world.,It's,a,beautiful,day.";
+    echo "<pre>";
+    print_r (explode(",",$str));
+    echo "</pre>";
+                                    </code>
+                                    </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Merge Two arrays in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+    <code class="language-javascript">$arr1 = array("Red", "Blue", "Green");
+    $arr2 = array("Blue", "Yellow", "Green");
+    $merged = array_merge($arr1, $arr2);
+    echo "&lt;pre>";
+    print_r($merged);
+    echo "&lt;pre>";
+    </code>
+                                    </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Remove Duplicates from arrays in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+    <code class="language-javascript">$arr1 = array("Red", "Blue", "Green");
+    $arr2 = array("Blue", "Yellow", "Green");
+    $merged = array_merge($arr1, $arr2);
+    echo "&lt;pre>";
+    print_r($merged);
+    print_r(array_unique($merged));
+    echo "&lt;pre>";
+    </code>
+                                    </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Dates parameters in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+    <code class="language-javascript">echo "Today is " . date("Y/m/d") . "<br>";
+    echo "Today is " . date("Y.m.d") . "<br>";
+    echo "Today is " . date("Y-m-d") . "<br>";
+    echo "Today is " . date("d-m-Y") . "<br>";
+    
+    Parameter with description
+    d - The day of the month (from 01 to 31)
+    D - A textual representation of a day (three letters)
+    j - The day of the month without leading zeros (1 to 31)
+    l (lowercase 'L') - A full textual representation of a day
+    N - The ISO-8601 numeric representation of a day (1 for Monday, 7 for Sunday)
+    S - The English ordinal suffix for the day of the month (2 characters st, nd, rd or th. Works well with j)
+    w - A numeric representation of the day (0 for Sunday, 6 for Saturday)
+    z - The day of the year (from 0 through 365)
+    W - The ISO-8601 week number of year (weeks starting on Monday)
+    F - A full textual representation of a month (January through December)
+    m - A numeric representation of a month (from 01 to 12)
+    M - A short textual representation of a month (three letters)
+    n - A numeric representation of a month, without leading zeros (1 to 12)
+    t - The number of days in the given month
+    L - Whether it's a leap year (1 if it is a leap year, 0 otherwise)
+    o - The ISO-8601 year number
+    Y - A four digit representation of a year
+    y - A two digit representation of a year
+    a - Lowercase am or pm
+    A - Uppercase AM or PM
+    B - Swatch Internet time (000 to 999)
+    g - 12-hour format of an hour (1 to 12)
+    G - 24-hour format of an hour (0 to 23)
+    h - 12-hour format of an hour (01 to 12)
+    H - 24-hour format of an hour (00 to 23)
+    i - Minutes with leading zeros (00 to 59)
+    s - Seconds, with leading zeros (00 to 59)
+    u - Microseconds (added in PHP 5.2.2)
+    e - The timezone identifier (Examples: UTC, GMT, Atlantic/Azores)
+    I (capital i) - Whether the date is in daylights savings time (1 if Daylight Savings Time, 0 otherwise)
+    O - Difference to Greenwich time (GMT) in hours (Example: +0100)
+    P - Difference to Greenwich time (GMT) in hours:minutes (added in PHP 5.1.3)
+    T - Timezone abbreviations (Examples: EST, MDT)
+    Z - Timezone offset in seconds. The offset for timezones west of UTC is negative (-43200 to 50400)
+    c - The ISO-8601 date (e.g. 2013-05-05T16:34:42+00:00)
+    r - The RFC 2822 formatted date (e.g. Fri, 12 Apr 2013 12:01:05 +0200)
+    U - The seconds since the Unix Epoch (January 1 1970 00:00:00 GMT)
+    and the following predefined constants can also be used (available since PHP 5.1.0):
+    
+    Q: How to get the current date and time in PHP?
+    Ans: The time would go by your server time. An easy workaround for this is to manually set the timezone by using date_default_timezone_set before the date() or time() functions are called to.
+    
+    I'm in Pune, India so I have something like this:
+    date_default_timezone_set('Asia/Kolkata');
+    
+    
+    Q: How to check the current timezone in PHP?
+    
+    Ans: Here is the code 
+    
+    $timezone = date_default_timezone_get();
+    echo "The current server timezone is: " . $timezone;
+    
+    </code>
+                                    </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+
+                                <span class="text">
+                                    CRUD operation in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+    <code class="language-javascript">&lt;a href="./crud-operation(without Ajax)/">./crud-operation(without Ajax)&lt;/a></code>
+                                    </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    SetTimeOut in php
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+    <code class="language-php">for($i=0;$i<3;$i++){
+        sleep(5); //5 seconds
+        task();
+    }
+    
+    function task(){
+        echo "Hello <br>";
+    }
+    </code>
+                                    </pre>
+                                </span>
+                            </div>
+
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    CRUD operation in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+    <code class="language-javascript">&lt;a href="./crud-operation(without Ajax)/">./crud-operation(without Ajax)&lt;/a></code>
+                                    </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Generate Strong encrypted password
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+    <code class="language-javascript">&lt;?php
+
+    $password = "Mohit";
+    
+    //$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+    
+    echo $hashedPassword;
+    
+    // result will be "$2y$10$8cnpotv050Md27DDRJuyLepdg4mE4tX0.VkygrTJE8Ss5zn7Tk0ja";
+    // $2y == blowfish algorithm;
+    // $10 == Loading time cost;
+
+?>
+    </code>
+                                    </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    check password is correct or incorrect
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+    <code class="language-javascript">&lt;?php
+
+    $password = "Mohit";
+    $password2 = "admin";
+    
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    
+    $matchPassword = password_verify($password, $hashedPassword);
+    
+    if($matchPassword){
+        echo "Login Success";
+    }else{
+        echo "Wrong Password";
+    }
+
+?>
+    </code>
+                                    </pre>
+                                </span>
+                            </div>
+                        </li>
+                        <li id="cmnFunc">
+                            <div>
+                                <span class="text">
+                                    Login Register in PHP
+                                </span>
+
+                                <span class="function">
+                                    <pre class="line-numbers">
+    <code class="language-javascript">&lt;a href="./login-register(without Ajax)/">./login-register(without Ajax)/&lt;/a>
+    </code>
+                                    </pre>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

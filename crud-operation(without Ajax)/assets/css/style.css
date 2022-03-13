@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  display: inline-block;
+}
+section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background: rgb(234 243 255 / 25%);
+}
+
+form,
+.data-wrap {
+  background: #fff;
+  padding: 50px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+form > * {
+  background: #f8f9fa;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+
+.errorBox {
+  color: #842029;
+  background-color: #f8d7da;
+  position: relative;
+  padding: 5px;
+  border: 1px solid #f5c2c7;
+  display: inline-block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.errorCheckRadio {
+  padding: 10px;
+  border: 1px solid #f8d7da;
+  position: relative;
+}
+.operation-icon svg {
+  width: 20px;
+  height: 20px;
+}
+.operation-icon {
+  background: #f2f7ff;
+  width: 50px;
+  height: 40px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+}
+.operation-icon.edit svg {
+  fill: #00cccc;
+}
+.operation-icon.delete svg {
+  fill: red;
+}
